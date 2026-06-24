@@ -1,0 +1,357 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Contrail+One&family=Gluten:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  color: #f7e3ff;
+}
+
+body {
+  background-color: #f0e7f2;
+}
+
+header {
+  background-color: #370234;
+  color: #cfc0c0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Gluten', cursive;
+}
+
+section {
+  padding: 7em 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@font-face {
+    font-family: 'KyivType';
+    src: url('../font/KyivTypeTitling-VarGX.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hero {
+  background: url(../img/img-inicio.webp) center/cover;
+  background-attachment: fixed;
+  width: 100%;
+
+  h1 {
+    font-size: 48px;
+    margin-block: 4vw;
+    margin-inline: 7vw;
+    text-align: left;
+    font-family: 'KyivType', sans-serif;
+    font-weight: 200;
+    letter-spacing: 10%;
+  }
+
+  p {
+    margin-inline: 6vw;
+    font-size: 30px;
+    max-width: 50vw;
+    margin-bottom: 2em;
+    font-family: 'Gluten', cursive; 
+  }
+
+  a {
+    background-color: #cfc0c0;
+    border-radius: 30px;
+    border: 3px solid #370234;
+    margin-left: 6em;
+    padding: 20px 50px;
+    font-size: 22px;
+    font-family: 'Contrail One', sans-serif; 
+
+  }
+}
+
+.faixainfinita {
+  background-color: #140112;
+  color: #cfc0c0;
+  padding-block: 60px;
+  overflow: hidden;
+
+  .faixa {
+    white-space: nowrap;
+    width: 100vh;
+
+    .texto-faixa {
+      display: inline-block;
+      animation: faixa 20s linear infinite;
+
+      p {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 32px;
+        margin-right: 50px;
+        letter-spacing: 5px;
+        font-family: "Irish Grover", system-ui;
+      }
+    }
+  }
+}
+
+@keyframes faixa {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.protocolo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(to bottom, #140112, #40063c, #2f032c);
+  padding: 5em 7em;
+
+  .ladoesq {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 44px;
+      margin-bottom: 1.3em;
+      font-family: "Irish Grover", system-ui;
+    }
+
+    p {
+      font-size: 32px;
+      text-align: left;
+      max-width: 350;
+      margin-bottom: 30px;
+      margin-left: 15px;
+      font-family: 'Gluten', cursive;
+    }
+
+    p:nth-child(3) {
+      margin-bottom: 50px;
+    }
+
+    p:nth-child(4) {
+      margin-bottom: 50px;
+    }
+
+    a {
+      background: #fff;
+      border-radius: 30px;
+      padding: 20px;
+      border: 2px solid #d400ff;
+      font-size: 36px;
+      margin-inline: 50px 100px;
+      font-weight: 900;
+      text-align: center;
+      font-family: 'Concert One', sans-serif;
+    }
+  }
+
+  .ladodire {
+    video {
+      width: 60%;
+      position: absolute;
+      z-index: 2;
+      right: 10px;
+      overflow: hidden;
+      display: block;
+      border-radius: 30px;
+    }
+  }
+}
+
+.especialidades {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: black;
+
+  .ladodire {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    p {
+      font-size: 32px;
+      text-align: left;
+      font-family: "Irish Grover", system-ui;
+
+    }
+
+    .itens {
+      display: inline;
+
+      .topico {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+
+        .num {
+          margin-right: 20px;
+          background-color: #d9d9d9;
+          border-radius: 100%;
+          padding: 20px 30px;
+          border: 3px solid #370234;
+        }
+      }
+    }
+  }
+}
+
+.carrossel {
+  padding: 0;
+  overflow: hidden;
+  background-color: #40063c;
+  display: none;
+
+  h2 {
+    font-size: 38px;
+    text-align: center;
+    padding-block: 2em;
+  }
+
+  .slides {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .img-slide {
+      display: inline-block;
+      animation: anima 20s linear infinite;
+
+      img {
+        width: 20vw;
+        height: 20vw;
+        border-radius: 20px;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+      }
+      .prev:hover,
+      .next:hover {
+        background: var(--color-destaque1);
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+    }
+  }
+}
+
+@keyframes anima {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.quem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5em 7em;
+    color: black;
+
+    h2 {
+      font-size: 44px;
+      margin-bottom: 2em;
+      font-family: "Irish Grover", system-ui;
+
+    }
+
+    p {
+      font-size: 32px;
+      text-align: left;
+      max-width: 440px;
+      margin-bottom: 50px;
+      margin-left: 15px;
+      font-family: 'Gluten', cursive;
+    }
+
+    .img-quem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.644);        }
+    }
+}
+
+.faixas-roxas {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.treinos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: black;
+    padding: 5em 7em;
+
+     h2 {
+      font-size: 44px;
+      margin-bottom: 2em;
+      font-family: "Irish Grover", system-ui;
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 40px;
+      font-family: 'Gluten', cursive;
+    }
+
+  .tipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 90%;
+      height: 80%;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 25px;
+      font-family: 'Gluten', cursive;
+    }
+  }
+}
